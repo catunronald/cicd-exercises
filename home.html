@@ -45,6 +45,30 @@
   </ul>
 </div>
 
+<!-- ========================= BUSINESS LOGIC =====================-->
+<script>
+  function changeNameToUppercase(name) {
+    return name.toUpperCase();
+  }
+
+  function greeting(name) {
+    var todaysDate = new Date();
+
+    var greetingString = changeNameToUppercase(name) +
+          ' ' +
+          todaysDate.getUTCMonth() +
+          '/' +
+          todaysDate.getUTCDay() +
+          '/' +
+          todaysDate.getFullYear();
+
+    return greetingString;
+  }
+  $('#greeting').text(greeting('Pedro'));
+</script>
+
+<!-- ======================== UNIT-TESTS LOGIC ==================== -->
+
 <script>
   results = document.getElementById('results');
 
@@ -61,33 +85,15 @@
 </script>
 
 <script>
-  function greeting(name) {
-    var todaysDate = new Date();
-
-    var greetingString = name +
-          ' ' +
-          todaysDate.getUTCMonth() +
-          '/' +
-          todaysDate.getUTCDay() +
-          '/' +
-          todaysDate.getFullYear();
-
-    return greetingString;
-  }
-  $('#greeting').text(greeting('Pedro'));
-</script>
-
-<script>
-
 
   function testTheTruth() {
     testResults('1 is equal to 1', 1 === 1);
   }
 
-
-  (function(){
+  (function() {
     testTheTruth();
   })()
+
 </script>
 </body>
 </html>
